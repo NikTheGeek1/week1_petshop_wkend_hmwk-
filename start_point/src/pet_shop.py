@@ -36,9 +36,9 @@ def find_pet_by_name(pet_shop_dict, name):
             return pet
 
 def remove_pet_by_name(pet_shop_dict, name):
-    for index_of_pet, pet in enumerate(pet_shop_dict["pets"]):
-        if pet["name"] == name:
-            del(pet_shop_dict["pets"][index_of_pet])
+    pet_to_delete = find_pet_by_name(pet_shop_dict, name)
+    pet_shop_dict["pets"].remove(pet_to_delete)
+    
 
 def add_pet_to_stock(pet_shop_dict, pet):
     pet_shop_dict['pets'].append(pet)
